@@ -1,0 +1,45 @@
+.login-container {
+  height: 100vh;
+  background-color: #f8f9fa; // Fondo gris muy tenue
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-panel {
+  background-color: #fff; // Fondo blanco para el panel
+  border-radius: 8px; // Bordes redondeados
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra para darle profundidad
+  max-width: 500px;
+  width: 100%;
+}
+
+h2 {
+  color: #343a40; // Color del texto del título
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+}
+
+.info-panel-container {
+  display: flex;
+  justify-content: center;
+}
+
+.info-panel {
+  max-width: 600px; // Limitar el ancho máximo
+  width: 100%;
+}

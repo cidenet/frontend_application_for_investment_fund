@@ -1,0 +1,84 @@
+.subscription-form-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.alert-info {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+
+  i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+}
+
+.badge.bg-success {
+  background-color: #28a745;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.form-check-label {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid #ccc; // Color de borde cuando no está marcado
+  border-radius: 8px;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.form-check-input {
+  display: none;
+}
+
+.form-check-input:checked + .form-check-label {
+  background-color: #0dcaf0;
+  color: #fff;
+  border-color: #0dcaf0;
+}
+
+.form-check-input:checked + .form-check-label i {
+  color: #fff;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.text-danger {
+  color: red;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); // Leve degradación
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3rem;
+
+}

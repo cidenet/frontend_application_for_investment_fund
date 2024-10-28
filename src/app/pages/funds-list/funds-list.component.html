@@ -1,0 +1,61 @@
+<h2 class="text-center my-4">Fondos de Inversión Disponibles</h2>
+
+@if (isLoading) {
+<div class="d-flex justify-content-center align-items-center">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Cargando...</span>
+  </div>
+</div>
+}
+
+@if (!isLoading) {
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th class="fw-normal">Nombre</th>
+        <th class="fw-normal">Monto Mínimo de Inversión</th>
+        <th class="fw-normal">Categoría</th>
+        <th class="fw-normal">Estado</th>
+        <th class="fw-normal">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (fund of funds; track $index) {
+      <tr>
+        <td>{{ fund.name }}</td>
+        <td>
+          <span class="badge bg-light text-success border border-success rounded-pill">
+            {{ fund.minimum_investment_amount | currency }}
+          </span>
+        </td>
+        <td>
+            <span class="badge badge-category rounded-pill bg-light text-dark px-3 py-2" style="border: 1px solid #000;">
+            {{ fund.category }}
+            </span>
+        </td>
+        <td>
+          <i *ngIf="fund.status === 'active'" class="bi bi-check-circle-fill text-success"></i>
+          {{ fund.status === 'active' ? 'ACTIVO' : fund.status }}
+        </td>
+        <td>
+          <div class="d-flex">
+            @if (!fund.user_is_subscribed) {
+            <button class="btn btn-info me-2 w-75 justify-content-center d-flex justify-content-center" (click)="subscribeToFund(fund)">
+              <i class="bi bi-check-circle"></i> Suscribirse
+            </button>
+            }
+            @if (fund.user_is_subscribed) {
+            <button class="btn btn-danger w-75 justify-content-center d-flex justify-content-center" (click)="confirmUnsubscribe(fund)">
+              <i class="bi bi-x-circle"></i> Cancelar Suscripción
+            </button>
+            }
+
+          </div>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+}

@@ -1,0 +1,26 @@
+<div class="login-container d-flex justify-content-center align-items-center">
+  <div class="login-panel p-4 shadow">
+    <h2 class="text-center mb-4">Fondo de inversiones XYZ</h2>
+    <div class="mb-3">
+      <label for="userSelect" class="form-label">Seleccione un usuario</label>
+      <select id="userSelect" class="form-select" [(ngModel)]="selectedUser">
+        <option [ngValue]="null" disabled selected>Seleccione una opción</option>
+        @for (user of users; track $index) {
+          <option [ngValue]="user">{{ user.name }}</option>
+        }
+      </select>
+    </div>
+    <button class="btn btn-primary w-100" (click)="login()">Entrar al fondo de inversiones</button>
+
+
+    <div class="info-panel-container d-flex justify-content-center">
+      <div class="info-panel mt-4 p-3 bg-light border rounded">
+        <p class="text-muted">
+          <i class="bi bi-info-circle-fill me-2"></i>
+          Nota: Esta sección de inicio de sesión es parte de una prueba práctica y se usan convenciones personales como lo es tener un punto de partida. Por favor, tenga en cuenta que el login, autorización y/o autenticación, son procesos ficticios y se utilizan únicamente con fines de demostración para seguir un flujo.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+

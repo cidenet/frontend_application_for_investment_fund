@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Investment Fund App</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Bienvenido, {{ user?.name }}</a>
+        </li>
+        <li class="nav-item separator"></li> <!-- Separator -->
+        <li class="nav-item ">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-wallet2 me-2"></i>
+            <label class="label-user-capital mr-2">Capital disponible: </label>
+            <span class="badge bg-success text-white">
+               {{ user?.investment_capital | currency:'COP':'symbol':'1.0-0' }}
+            </span>
+          </div>
+        </li>
+        <li class="nav-item separator"></li> <!-- Separator -->
+        <li class="nav-item">
+          <a class="btn btn-outline-danger ms-2" [routerLink]="['/login']">Cerrar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

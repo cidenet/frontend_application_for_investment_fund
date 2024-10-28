@@ -1,0 +1,43 @@
+.navbar {
+  .nav-link {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #dc3545;
+      color: #fff;
+    }
+  }
+}
+
+.nav-item {
+  &.separator {
+    border-left: 3px solid #ccc;
+    height: 30px;
+    margin: 0 15px;
+    align-self: center;
+  }
+
+  .badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+li label {
+  margin-right: 8px;
+}
